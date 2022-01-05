@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>726307256142-1j84ag0m0dq78sh2eek9jbs70r1dtkr1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.726307256142-1j84ag0m0dq78sh2eek9jbs70r1dtkr1</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC7He1aE8HLcMTWIAhIeOPU6fXVtj2qfxA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>726307256142</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Project1.Anjiz</string>
+	<key>PROJECT_ID</key>
+	<string>anjiz-82c3f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>anjiz-82c3f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:726307256142:ios:a61e1e6acc2fc43e78101f</string>
+</dict>
+</plist>
