@@ -58,25 +58,6 @@ db.collection("Users").getDocuments {
 
 
 
-//            url.collection("Userss").getDocuments { Snapshot, error in
-//                print("-------------------")
-//                for ducment in Snapshot!.documents {
-//                    print(ducment.documentID)
-//                    if Auth.auth().currentUser?.uid != ducment.documentID{
-//
-//                            // def let = Struct Model (var inside Struct: var inside for )
-//                            let newEvent = User(name: ducment.get("NameDisplay") as? String ?? "nil",id: ducment.get("userID") as? String ?? "nil", imageUrl: ducment.get("image") as? String ?? "nil")
-//                            self.arrUser.append(newEvent)
-//                            print(self.arrUser)
-//
-//
-//
-//
-//                }
-//                }
-//                self.TableViewUsers.reloadData()
-//            }
-
     
     
 @IBAction func signOutAction(_ sender: Any) {
@@ -92,11 +73,7 @@ db.collection("Users").getDocuments {
     struct User {
         var name:String?
         var id:String?
-//            var imageUrl:String?
-//            init(name:String?,id:String,imageUrl:String?){
-//                self.name = name
-//                self.id = id
-//                self.imageUrl = imageUrl
+
         }
     }
   

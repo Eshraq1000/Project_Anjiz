@@ -44,16 +44,9 @@ class ViewController: UIViewController {
     
     func UI() {
         
-        view.backgroundColor = .cyan
+//        view.backgroundColor = .cyan
         
-        // white view
-        
-//        let subView = UIView()
-//        subView.backgroundColor = .white
-//        subView.frame = CGRect(x: 0, y: 285, width: 390, height: 1500)
-//        subView.layer.cornerRadius = 30
-//        view.addSubview(subView)
-
+ 
           //lable sing
         labelSingUp.frame = CGRect(x: 200, y: 150, width: 200, height: 50)
         labelSingUp.text = "تسجيل "

@@ -42,7 +42,7 @@ class SingUp: UIViewController {
     
         override func viewDidLoad() {
             super.viewDidLoad()
-            
+        
             
             UI()
 
@@ -54,16 +54,45 @@ class SingUp: UIViewController {
     
     
     @IBAction func SingBTAction(_ sender: Any) {
+     
+                Auth.auth().createUser(withEmail: email.text!, password: password.text!) { result, error in
+                    if error == nil {
+                        self.db.collection("Users")
+                                .addDocument(data:
+                                [
+                                   "name":self.name.text! ,
+                                   "email":self.email.text! ,
+                                   "password":self.password.text!,
+                                   "userID" : Auth.auth().currentUser!.uid
+                                    
+                    
+                                ]
+                                )
+                        
+                        print("تم انشاء مستخدم جديد وانشاء البيانات  بنجاح")
+                        
+                        let vcc = self.storyboard?.instantiateViewController(withIdentifier: "Tabbar")
+                        vcc!.modalPresentationStyle = .fullScreen
+                        self.present(vcc!, animated: true, completion: nil)
+                        
+//                        self.performSegue(withIdentifier: "move", sender: self)
 
-        signUpInBtnClick()
-    }
+
+                    }else {
+                        print(error?.localizedDescription)
+                        print("لم يتم انشاء المستخدم")
+                       
+                    }
+                }
+            }
+
+        
+     
+    
+        
     
     
-//    @IBAction func showPasswordButtonAct(_ sender: Any) {
-//        hidePassword()
-//
-//    }
-    
+  
     
         
         func UI() {
@@ -159,30 +188,6 @@ class SingUp: UIViewController {
             
             
 
-            // button sign Up
-            
-//            buttonSingUp.frame = CGRect(x: 90, y: 570, width: 230, height: 50)
-//            buttonSingUp.layer.cornerRadius = 25
-//            buttonSingUp.backgroundColor = #colorLiteral(red: 0.2687272429, green: 0.3382961154, blue: 0.2888988853, alpha: 1)
-//            buttonSingUp.setTitle("تسجيل ", for: .normal)
-//    //        button.titleLabel?.font = UIFont(name: "GillSans-Italic", size: 10)
-//            view.addSubview(buttonSingUp)
-//
-//            buttonSingUp.addTarget(self, action: #selector (AddTaskVC()), for: .touchDown)
-    //
-            
-            
-            // Log in
-//            buttonLogin.frame = CGRect(x: 50, y: 760, width: 230, height: 50)
-//            buttonLogin.layer.cornerRadius = 25
-//            buttonLogin.setTitleColor( #colorLiteral(red: 0.2687272429, green: 0.3382961154, blue: 0.2888988853, alpha: 1) , for: .normal)
-//            buttonLogin.setTitle("تسجيل دخول ", for: .normal)
-//            buttonLogin.titleLabel?.font = UIFont(name: "GillSans-Italic", size: 23)
-//            view.addSubview(buttonLogin)
-            
-//            buttonLogin.addTarget(self, action: #selector (logInBtnClick), for: .touchDown)
-            
-            
             
             
             buttonGoogle.frame = CGRect(x: 180, y: 700, width: 50, height: 50)
@@ -222,43 +227,8 @@ class SingUp: UIViewController {
            
             
         }
-        // MARK: sign Up
-             func signUpInBtnClick(){
-                Auth.auth().createUser(withEmail: email.text!, password: password.text!) { result, error in
-                    if error == nil {
-                        self.db.collection("Users")
-                                .addDocument(data:
-                                [
-                                   "name":self.name.text! ,
-                                   "email":self.email.text! ,
-                                   "password":self.password.text!
-                                    
-                    
-                                ]
-                                )
-                        
-                        print("تم انشاء مستخدم جديد وانشاء البيانات  بنجاح")
-                        let logVc = TabBarVC()
-                        logVc.modalPresentationStyle = .fullScreen
-                        self.present(logVc, animated: true, completion: nil)
-    //
-    //                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "users")
-    //                    vc!.modalPresentationStyle = .fullScreen
-    //                    self.present(vc!, animated: true, completion: nil)
+       
 
-                    }else {
-                        print(error?.localizedDescription)
-                        print("لم يتم انشاء المستخدم")
-                       
-                    }
-                }
-            }
-        func logInBtnClick(){
-            let logVc = LoginVC()
-            logVc.modalPresentationStyle = .fullScreen
-            self.present(logVc, animated: true, completion: nil)
-        }
-        
            
     @objc func logInGoogle() {
             let clentid = FirebaseApp.app()?.options.clientID

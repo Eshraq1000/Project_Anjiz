@@ -65,7 +65,6 @@ extension TableProject: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        events.count
-        return 3
         
         
         
@@ -129,34 +128,7 @@ extension TableProject: UITableViewDelegate, UITableViewDataSource {
 //            }
 //
             
-            
-            
-            
-            
-            
-          
-//            self.navigationController?.pushViewController(vc, animated: true)
-//            vc.Taskuser = "mnnm"
-//            self.navigationController?.popViewController(animated: true)
-//            performSegue(withIdentifier: "Taskseg", sender: nil)
-
-
-        
-        
-        
-        
-//        sendDatafromSearchBarToFirebase()
-//        selectedEvent = events[indexPath.row]
-//        performSegue(withIdentifier: "moreEventDetails", sender: nil)
-    
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "moreEventDetails" {
-//            let nextVc = segue.destination as! EventDetailsVC
-//            nextVc.selectedEvent = selectedEvent
-//        }
-//    }
-   
+  
 
 
     

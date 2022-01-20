@@ -34,17 +34,7 @@ class ChatMassegeVC: UIViewController {
     
     func reloadAllMsg(idUser:String){
         arrListMsg.removeAll()
-//        url.collection("Users").document(myID!).collection("Chat").document(self.userID!).collection("Message").getDocuments { snapShot, error in
-//            for id in snapShot!.documents {
-//                print(id.documentID)
-//                print("content",id.get("content")!)
-//
-//
-//                self.arrListMsg.append( MsgStruct(id: id.get("idUser")! as! String, content: id.get("content")! as! String))
-//
-//            }
-//            self.TableViewChat.reloadData()
-//        }
+
         url.collection("Users").document(myID ?? "h").collection("Chat").document(self.userID!).collection("Message").order(by: "date").addSnapshotListener { snapShot, error in
             self.arrListMsg.removeAll()
             print("_+_+_+_+_+_+")
@@ -72,7 +62,7 @@ class ChatMassegeVC: UIViewController {
                    "date":dateSend(),
                    "content":TextFiledForMsg.text!]
         url.collection("Users").document(myID!).collection("Chat").document(userID!).collection("Message").document().setData(msg)
-        url.collection("Users").document(userID!).collection("Chat").document(myID!).collection("Message").document().setData(msg)
+//        url.collection("Users").document(userID!).collection("Chat").document(myID!).collection("Message").document().setData(msg)
         reloadAllMsg(idUser:userID!)
     }
 

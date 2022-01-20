@@ -9,13 +9,9 @@ import UIKit
 import Firebase
 
 class SearchUserVC: UIViewController {
-    //def let can access to firestore
     let db = Firestore.firestore()
-    //def var act current user Now
-//    var userId = Auth.auth().currentUser?.uid
-    //def var Take Struct Model inside to Araay
+ 
     var UserArray = [User]()
-    //def var Take Struct Model
     var selectedUser:User?
     var indexNumber: Int = 0
 
@@ -121,14 +117,7 @@ extension SearchUserVC: UITableViewDelegate, UITableViewDataSource {
         70
     }
     
-//    func sendDatafromCellToFirebase(){
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SearchCell
-//       db.collection("Tasks").document().setData(
-//
-//        ["projectUser" : cell.userNameLB.text!
-//           ])
-//
-//    }
+
     // MARK: Did select
     // press in cell ->
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -150,17 +139,9 @@ extension SearchUserVC: UITableViewDelegate, UITableViewDataSource {
         
         // var indexNumber: Int = 0
         indexNumber = indexPath.row
-//        performSegue(withIdentifier: "Taskseg", sender: nil)
     }
     
-        
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "Taskseg" {
-//            // To another View
-//            var secondVC = segue.destination as! AddTaskVC
-//            //From another View var imageName: String? = name Array [var Up]
-//            secondVC.taskUser = UserArray[indexNumber].name
-//        }
+      
     }
         
 
@@ -168,30 +149,7 @@ extension SearchUserVC: UITableViewDelegate, UITableViewDataSource {
             
             
             
-            
-            
-          
-//            self.navigationController?.pushViewController(vc, animated: true)
-//            vc.Taskuser = "mnnm"
-//            self.navigationController?.popViewController(animated: true)
-//            performSegue(withIdentifier: "Taskseg", sender: nil)
-
-
-        
-        
-        
-        
-//        sendDatafromSearchBarToFirebase()
-//        selectedEvent = events[indexPath.row]
-//        performSegue(withIdentifier: "moreEventDetails", sender: nil)
-    
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "moreEventDetails" {
-//            let nextVc = segue.destination as! EventDetailsVC
-//            nextVc.selectedEvent = selectedEvent
-//        }
-//    }
+  
    
 }
 

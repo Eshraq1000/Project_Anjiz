@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5D1BA3F0279946FC000B62A1 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1BA3EF279946FC000B62A1 /* TextField.swift */; };
 		5D1BA3F2279950B4000B62A1 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1BA3F1279950B4000B62A1 /* TabBar.swift */; };
+		5D1BA3F42799F22F000B62A1 /* HomeVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1BA3F32799F22F000B62A1 /* HomeVc.swift */; };
 		5D22918127859FC40033E366 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D22918027859FC40033E366 /* testViewController.swift */; };
 		5D530AE52798493500E6DB45 /* TableProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D530AE42798493500E6DB45 /* TableProject.swift */; };
 		5D530AE727984BD700E6DB45 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D530AE627984BD700E6DB45 /* ProjectCell.swift */; };
@@ -68,6 +69,7 @@
 /* Begin PBXFileReference section */
 		5D1BA3EF279946FC000B62A1 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		5D1BA3F1279950B4000B62A1 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		5D1BA3F32799F22F000B62A1 /* HomeVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVc.swift; sourceTree = "<group>"; };
 		5D22918027859FC40033E366 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		5D530AE42798493500E6DB45 /* TableProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableProject.swift; sourceTree = "<group>"; };
 		5D530AE627984BD700E6DB45 /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		5D1C49F727976D2400CCAE88 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5D1BA3F1279950B4000B62A1 /* TabBar.swift */,
 				5D666FED2783069800BFBBEA /* Animation.swift */,
 				5D530AF62798E48B00E6DB45 /* AnimationButton.swift */,
 				5D530AE827985ED700E6DB45 /* CircularTransition.swift */,
@@ -173,7 +176,7 @@
 				5D530AF82798FC2800E6DB45 /* SingUp.swift */,
 				5D530AFA279903D800E6DB45 /* ChatHomeVC.swift */,
 				5D530AFE2799063600E6DB45 /* ChatMassegeVC.swift */,
-				5D1BA3F1279950B4000B62A1 /* TabBar.swift */,
+				5D1BA3F32799F22F000B62A1 /* HomeVc.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				5D530AE727984BD700E6DB45 /* ProjectCell.swift in Sources */,
 				5D7490102791FAEA002E35A1 /* TaskCell.swift in Sources */,
 				5D530AF32798D89B00E6DB45 /* SearchUserCell.swift in Sources */,
+				5D1BA3F42799F22F000B62A1 /* HomeVc.swift in Sources */,
 				5D530AFB279903D800E6DB45 /* ChatHomeVC.swift in Sources */,
 				5D530AF52798DBE500E6DB45 /* UserModel.swift in Sources */,
 				5D530AFF2799063600E6DB45 /* ChatMassegeVC.swift in Sources */,

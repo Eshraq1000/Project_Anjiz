@@ -8,12 +8,17 @@
 import UIKit
 import Firebase
 
-class ProfileVc: UIViewController {
+var defaults = UserDefaults.standard
 
+class ProfileVc: UIViewController {
+    
+    
+    @IBOutlet weak var darkLightModeSwitch: UISwitch!
+    
     let db = Firestore.firestore()
-        let email = Auth.auth().currentUser!.email!
+//        let email = Auth.auth().currentUser!.email!
         let largeConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .bold, scale: .large)
-        let signOutButton = UINavigationItem()
+//        let signOutButton = UINavigationItem()
         let lineView = UIView()
         let profileImage = UIImageView()
         let emailLable = UILabel()
@@ -25,24 +30,23 @@ class ProfileVc: UIViewController {
         
         override func viewDidLoad() {
             super.viewDidLoad()
-            view.backgroundColor = .white
+            
+            navigationItem.backButtonTitle = "Setting"
             
             //MARK: - SignOutButton
             let largeConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .bold, scale: .large)
             let largeBoldArrow = UIImage(systemName: "rectangle.portrait.and.arrow.right", withConfiguration: largeConfig)
-            navigationItem.rightBarButtonItem = UIBarButtonItem(image: largeBoldArrow, style: .plain, target: self, action: #selector(signOut))
+           
             navigationItem.rightBarButtonItem?.tintColor = .red
             
             
-            //MARK: - SeparatorLine
-            lineView.backgroundColor = #colorLiteral(red: 0.9411765933, green: 0.9411765337, blue: 0.9411766529, alpha: 1)
-            lineView.frame = CGRect(x: 0 , y: 90, width: view.frame.size.width, height: 3)
-            view.addSubview(lineView)
+
             //MARK: - ProfileImage
             profileImage.image = UIImage(systemName: "person.crop.circle")
             profileImage.frame = CGRect(x: 145, y: 130, width: 100, height: 100)
             profileImage.tintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
             view.addSubview(profileImage)
+            
             //MARK: - EmailLabel
             
             NameLable.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -61,15 +65,42 @@ class ProfileVc: UIViewController {
             getData()
             
 
-            let treeimage = UIImageView()
-            treeimage.image = UIImage(named: "p16")
-            treeimage.frame = CGRect(x: 25, y: 600, width: 350, height: 100)
-            treeimage.contentMode = .scaleAspectFill
-            view.addSubview(treeimage)
         }
-      
-        //MARK: - Methods
-        @objc func signOut() {
+    
+    
+    
+    @IBAction func darkLightModeSwitchAction(_ sender: Any) {
+    
+ 
+                if defaults.bool(forKey: "mode") == false {
+                    
+                    if darkLightModeSwitch.isOn == true {
+                        
+                        UIApplication.shared.windows.forEach { window in
+                            window.overrideUserInterfaceStyle = .dark}
+                    }else {
+                        
+                        if #available(iOS 10.0, *) {
+                            
+                            UIApplication.shared.windows.forEach { window in
+                                window.overrideUserInterfaceStyle = .light }
+                        }
+                    }
+                }else{
+                    
+                }
+            
+           
+        }
+
+
+
+
+
+    
+    
+    @IBAction func SignOutAct(_ sender: Any) {
+   
             let alert = UIAlertController(title: "تنبيه", message: "هل أنت متأكد أنك تريد تسجيل الخروج؟", preferredStyle: .actionSheet)
                   let action = UIAlertAction(title: "تسجيل الخروج", style: .destructive) { action in
                       
@@ -106,3 +137,4 @@ class ProfileVc: UIViewController {
         }
     }
 
+    
