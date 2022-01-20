@@ -142,8 +142,8 @@ class ViewController: UIViewController {
         buttonSingUp.setTitle("تسجيل ", for: .normal)
 //        button.titleLabel?.font = UIFont(name: "GillSans-Italic", size: 10)
         view.addSubview(buttonSingUp)
-        
-        buttonSingUp.addTarget(self, action: #selector (signUpInBtnClick), for: .touchDown)
+//        
+//        buttonSingUp.addTarget(self, action: #selector (AddTaskVC()), for: .touchDown)
 //
         
         
@@ -197,6 +197,7 @@ class ViewController: UIViewController {
        
         
     }
+    // MARK: sign Up
         @objc private func signUpInBtnClick(){
             Auth.auth().createUser(withEmail: email.text!, password: password.text!) { result, error in
                 if error == nil {
@@ -247,9 +248,9 @@ class ViewController: UIViewController {
                 let auth = GoogleAuthProvider.credential(withIDToken: idtoken!, accessToken: authntcation!.accessToken)
                 Auth.auth().signIn(with: auth) { user, error in
                     if error == nil {
-                        let homevc = HomeVc()
-                        homevc.modalPresentationStyle = .fullScreen
-                        self.present(homevc, animated: true, completion: nil)
+//                        let homevc = HomeVc()
+//                        homevc.modalPresentationStyle = .fullScreen
+//                        self.present(homevc, animated: true, completion: nil)
                     }
                 }
             }

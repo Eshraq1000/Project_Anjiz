@@ -26,11 +26,14 @@ class ProfileVc: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             view.backgroundColor = .white
+            
             //MARK: - SignOutButton
             let largeConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .bold, scale: .large)
             let largeBoldArrow = UIImage(systemName: "rectangle.portrait.and.arrow.right", withConfiguration: largeConfig)
             navigationItem.rightBarButtonItem = UIBarButtonItem(image: largeBoldArrow, style: .plain, target: self, action: #selector(signOut))
-            navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+            navigationItem.rightBarButtonItem?.tintColor = .red
+            
+            
             //MARK: - SeparatorLine
             lineView.backgroundColor = #colorLiteral(red: 0.9411765933, green: 0.9411765337, blue: 0.9411766529, alpha: 1)
             lineView.frame = CGRect(x: 0 , y: 90, width: view.frame.size.width, height: 3)
